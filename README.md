@@ -8,7 +8,11 @@ O **WiFi Information** é uma aplicação desenvolvida em Python com foco em apr
 
 O projeto permite visualizar informações da rede Wi-Fi e consultar detalhes sobre interfaces e drivers de rede instalados no computador, utilizando uma interface simples e intuitiva construída com Tkinter.
 
+
 ## Funcionalidades
+
+Como rodar:
+Primeiro instala as dependências:
 
 * Exibe informações da rede Wi-Fi conectada, como o SSID.
 * Lista as interfaces de rede disponíveis no sistema.
@@ -80,6 +84,6 @@ Este projeto foi desenvolvido com fins educacionais para praticar:
 * Programação com threads;
 * Organização de projetos em Python.
 
----
+
 
 Desenvolvido por Gabriel Seisl.
