@@ -10,7 +10,7 @@ Carrega os dados dos drivers usando threads pra interface não travar
 
 Interface feita com Tkinter e estilizada para Windows
 
-Como rodar
+Como rodar:
 Primeiro instala as dependências:
 
 Bash
