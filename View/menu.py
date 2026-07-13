@@ -4,7 +4,8 @@ import os
 from Control.drivers import abrir_janela_drivers
 from Control.user import user
 from PIL import Image, ImageTk
-
+from tkinter import messagebox
+from Control.ping import ping
 PASTA_BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAMINHO_ICO = os.path.join(PASTA_BASE, "Img", "logo.ico")
 
@@ -23,7 +24,28 @@ def iniciar_menu():
         abrir_janela_drivers(janela)
 
     def abrir_user():
-        user(janela)  # Passa a janela principal
+        user(janela)
+        
+    def abrir_ping():
+     dados = ping("google.com")
+
+     if dados["sucesso"]:
+        media = dados["media_ms"]
+
+        if media > 60:
+            status = "Ping Alto"
+
+        elif media > 30:
+            status = "Ping Médio"
+
+        else:
+            status = "Ping Baixo"
+
+        messagebox.showinfo(
+            "Ping",
+            f"Média: {media} ms\nStatus: {status}"
+        )
+
 
     if os.path.exists(CAMINHO_ICO):
         try:
@@ -95,5 +117,26 @@ def iniciar_menu():
     )
     botao_user.image = icone2
     botao_user.place(x=260, y=200, width=180, height=50)
+
+
+
+
+    imagem_ping = Image.open(
+    os.path.join(PASTA_BASE, "Img", "fio.png")
+)
+    imagem_ping = imagem_ping.resize((25, 25))
+    icone_ping = ImageTk.PhotoImage(imagem_ping)
+    botao_ping = tk.Button(
+    janela,
+    text="Ver Ping",
+    image=icone_ping,
+    compound="left",
+    bg="#000000",
+    fg="white",
+    command=abrir_ping
+)
+
+    botao_ping.image = icone
+    botao_ping.place(x=40, y=270, width=180, height=50)
 
     janela.mainloop()
