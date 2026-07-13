@@ -17,7 +17,8 @@ def driver():
     return interfaces + "\n" + drivers
 
 PASTA_BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CAMINHO_ICO = os.path.join(PASTA_BASE, "Img", "logo.ico")
+CAMINHO_ICO = os.path.join(PASTA_BASE, "Img", "icones", "logo.ico")
+
 
 def abrir_janela_drivers(janela_pai):
     janela = tk.Toplevel(janela_pai)
